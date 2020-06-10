@@ -1,0 +1,1 @@
+"use strict";var _require=require("awilix"),createContainer=_require.createContainer,asClass=_require.asClass,asFunction=_require.asFunction,asValue=_require.asValue,config=require("../config"),app=require("."),container=createContainer();container.register({config:asValue(config),app:asClass(app).singleton()}),module.exports=container;
