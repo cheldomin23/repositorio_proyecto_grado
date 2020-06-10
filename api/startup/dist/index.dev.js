@@ -15,12 +15,13 @@ var Server =
 /*#__PURE__*/
 function () {
   function Server(_ref) {
-    var config = _ref.config;
+    var config = _ref.config,
+        router = _ref.router;
 
     _classCallCheck(this, Server);
 
     _config = config;
-    _express = new express();
+    _express = new express().use(router);
   }
 
   _createClass(Server, [{

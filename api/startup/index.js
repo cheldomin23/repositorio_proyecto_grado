@@ -3,9 +3,9 @@ let _express = null;
 let _config = null;
 
 class Server {
-    constructor({config}){
+    constructor({config, router}){
        _config = config;
-       _express = new express();
+       _express = new express().use(router);
     }
 
     start(){

@@ -1,0 +1,1 @@
+"use strict";var express=require("express");module.exports=function(e){var r=e.userRoutes,s=express.Router();return s.use("/user",r),s};
