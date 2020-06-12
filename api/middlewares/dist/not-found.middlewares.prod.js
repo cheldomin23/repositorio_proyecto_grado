@@ -1,0 +1,1 @@
+"use strict";module.exports=function(s,t){return t.status(404).send({ok:!1,message:"Not found"})};

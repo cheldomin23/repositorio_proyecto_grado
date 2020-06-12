@@ -1,1 +1,1 @@
-"use strict";var express=require("express");module.exports=function(){var e=express.Router();return e.post("/",function(e,s){s.send({message:"todo salio bien"})}),e};
+"use strict";var express=require("express");module.exports=function(e){var r=e.userController,s=express.Router();return s.post("/",r.signup),s.get("/:email",r.emailValidate),s.put("/:email",r.update),s};

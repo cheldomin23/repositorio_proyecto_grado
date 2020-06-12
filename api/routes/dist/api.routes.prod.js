@@ -1,1 +1,1 @@
-"use strict";var express=require("express");module.exports=function(e){var r=e.userRoutes,s=express.Router();return s.use("/user",r),s};
+"use strict";var express=require("express"),_require=require("../middlewares"),notFoundMiddleware=_require.notFoundMiddleware,errorMiddleware=_require.errorMiddleware;module.exports=function(e){var r=e.userRoutes,u=e.authRoutes,d=express.Router();return d.use("/user",r),d.use("/auth",u),d.use(errorMiddleware),d.use(notFoundMiddleware),d};

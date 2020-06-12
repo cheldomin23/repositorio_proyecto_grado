@@ -8,6 +8,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var express = require('express');
 
+var fs = require('fs');
+
+var http = require('http');
+
+var https = require('https');
+
 var _express = null;
 var _config = null;
 
@@ -28,10 +34,14 @@ function () {
     key: "start",
     value: function start() {
       return new Promise(function (resolve) {
-        _express.listen(_config.PORT, function () {
+        https.createServer({
+          key: fs.readFileSync(__dirname + '/../../cert/hey.pem'),
+          cert: fs.readFileSync(__dirname + '/../../cert/cert.pem'),
+          passphrase: '1234'
+        }, _express).listen(_config.SECURE_PORT, function () {
           console.log("Servidor corriendo en puerto ".concat(_config.PORT));
         });
-
+        http.createServer(_express).listen(_config.PORT);
         resolve();
       });
     }

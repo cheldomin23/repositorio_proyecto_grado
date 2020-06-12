@@ -1,1 +1,1 @@
-"use strict";var container=require("./api/startup/container"),server=container.resolve("app");server.start();
+"use strict";var container=require("./api/startup/container"),server=container.resolve("app");require.main===module?server.start():module.exports=server.start;

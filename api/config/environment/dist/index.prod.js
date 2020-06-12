@@ -1,0 +1,1 @@
+"use strict";var development=require("./development.environment"),production=require("./production.environment"),config=development,config="production"==process.env.NODE_ENV?production:development;module.exports=config;

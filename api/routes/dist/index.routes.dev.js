@@ -1,5 +1,6 @@
 "use strict";
 
 module.exports = {
-  userRoutes: require('./user.routes')
+  userRoutes: require('./user.routes'),
+  authRoutes: require('./auth.routes')
 };

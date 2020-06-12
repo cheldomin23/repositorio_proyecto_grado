@@ -1,0 +1,1 @@
+"use strict";module.exports=function(s,e,t,u){var a=s.status||500;return t.status(a).send({ok:!1,message:s.message})};
