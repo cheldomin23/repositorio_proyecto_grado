@@ -8,7 +8,6 @@
     "dev": "nodemon ./server.js",
     "build": "webpack -p",
     "start_windows": "set NODE_ENV=production&&node cluster.js"
-
   },
   "author": "Cristian Alexis Tierradentro Cruz, Miguel Angel Dominguez",
   "license": "ISC",
