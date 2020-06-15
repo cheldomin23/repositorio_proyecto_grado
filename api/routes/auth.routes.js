@@ -9,7 +9,7 @@ module.exports = ({authController}) => {
   //acceso publico
   router.post('/login',loginValidationRules(),loginValidate,authController.login);
   //acceso seguro
-  router.get('/relogin', [authMiddleware],authController.relogin);
+  router.get('/relogin',[authMiddleware],authController.relogin);
 
   return router;
 }

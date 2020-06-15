@@ -6,8 +6,16 @@ var _require = require('express-validator'),
     body = _require.body,
     validationResult = _require.validationResult;
 
-var loginValidationRules = function loginValidationRules() {
-  return [body('password').isLength({
+var updateUserValidationRules = function updateUserValidationRules() {
+  return [body('firstName').isLength({
+    min: 4
+  }).withMessage('El primer nombre debe tener minimo 4 caracteres'), body('firstName').isLength({
+    max: 25
+  }).withMessage('El primer nombre debe tener maximo 25 caracteres'), body('firstName').isString().withMessage('El primer nombre no debe contener caracteres numéricos'), body('lastname').isLength({
+    min: 4
+  }).withMessage('El primer apellido debe tener minimo 4 caracteres'), body('lastname').isLength({
+    max: 25
+  }).withMessage('El primer apellido debe tener maximo 25 caracteres'), body('lastname').isString().withMessage('El primer apellido no debe contener caracteres numéricos'), body('password').isLength({
     min: 8
   }).withMessage('La contraseña es muy corta, debe tener minimo 8 caracteres'), body('password').isLength({
     max: 30
@@ -18,7 +26,7 @@ var loginValidationRules = function loginValidationRules() {
   }).withMessage('Correo electrónico muy largo, debe tener maximo 50 caracteres')];
 };
 
-var loginValidate = function loginValidate(req, res, next) {
+var updateUserValidate = function updateUserValidate(req, res, next) {
   var errors = validationResult(req);
 
   if (errors.isEmpty()) {
@@ -35,6 +43,6 @@ var loginValidate = function loginValidate(req, res, next) {
 };
 
 module.exports = {
-  loginValidationRules: loginValidationRules,
-  loginValidate: loginValidate
+  updateUserValidationRules: updateUserValidationRules,
+  updateUserValidate: updateUserValidate
 };
