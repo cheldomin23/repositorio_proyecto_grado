@@ -47,7 +47,7 @@
     "babel-loader": "^8.1.0",
     "nodemon": "^2.0.4",
     "react-hot-loader": "^4.12.21",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.11.0"
   }
